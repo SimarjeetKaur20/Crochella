@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @theme {
+  /* legacy tokens (keep for other pages) */
   --color-blush: #F5DDE3;
   --color-cream: #FFF9F2;
   --color-beige: #E9DCCB;
@@ -8,7 +9,15 @@
   --color-brown: #493B35;
   --color-brown-light: #6B5247;
   --color-brown-dark: #2D211C;
-  
+
+  /* redesign tokens */
+  --color-warm-cream: #FFF8F1;
+  --color-blush-pink: #F4DAD8;
+  --color-dusty-rose: #C96F78;
+  --color-soft-peach: #F6E5D9;
+  --color-choc-brown: #57382D;
+  --color-sage-green: #A8B5A0;
+
   --font-serif: "Playfair Display", Georgia, serif;
   --font-sans: "Inter", system-ui, sans-serif;
   --font-script: "Dancing Script", cursive;
@@ -186,3 +195,44 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-sans);
   border-radius: 12px !important;
 }
+
+/* ── Reduce-motion override ─────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Global smooth scroll ───────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Arch card aspect ratio helper ─────────────────────────────────────── */
+.arch-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Hero panel arch shape ──────────────────────────────────────────────── */
+.hero-arch-panel {
+  border-radius: 50% 50% 18px 18px / 60px 60px 18px 18px;
+}
+
+/* ── Page-load fade-in ──────────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fadeUp 0.7s ease forwards;
+}
+
+/* ── Scrollbar ──────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #FFF8F1; }
+::-webkit-scrollbar-thumb { background: #F4DAD8; border-radius: 3px; }
