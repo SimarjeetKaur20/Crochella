@@ -1,8 +1,7 @@
 import type { Product, SiteConfig } from '../types'
 
-// Using local product images from /product images/ folder
-// These are served from the public directory after being copied there
 export const SAMPLE_PRODUCTS: Product[] = [
+  // ── CROCHET BAGS ────────────────────────────────────────────────────────
   {
     id: 'p1',
     name: 'Lily Crochet Bag',
@@ -11,7 +10,15 @@ export const SAMPLE_PRODUCTS: Product[] = [
     category: 'crochet-bags',
     price: 850,
     discounted_price: undefined,
-    images: ['/product-images/lilybag(1).jpeg', '/product-images/lilybag(2).jpeg', '/product-images/lilybag(3).jpeg', '/product-images/lilybag(4).jpeg'],
+    images: [
+      '/product-images/lilybag(1).jpeg',
+      '/product-images/lilybag(2).jpeg',
+      '/product-images/lilybag(3).jpeg',
+      '/product-images/lilybag(4).jpeg',
+      '/product-images/lilybag(5).jpeg',
+      '/product-images/lilybag(6).jpeg',
+      '/product-images/lilybag(7).jpeg',
+    ],
     colors: ['Blush Pink', 'Sage Green', 'Cream White', 'Dusty Lavender'],
     sizes: ['Small', 'Medium'],
     stock_quantity: 5,
@@ -33,7 +40,11 @@ export const SAMPLE_PRODUCTS: Product[] = [
     category: 'crochet-bags',
     price: 950,
     discounted_price: 850,
-    images: ['/product-images/ribbon_bag(1).jpeg', '/product-images/ribbon_bag(2).jpeg', '/product-images/ribbon_bag(3).jpeg'],
+    images: [
+      '/product-images/ribbon_bag(1).jpeg',
+      '/product-images/ribbon_bag(2).jpeg',
+      '/product-images/ribbon_bag(3).jpeg',
+    ],
     colors: ['Blush Pink', 'Cream White', 'Beige'],
     sizes: ['One Size'],
     stock_quantity: 3,
@@ -54,7 +65,10 @@ export const SAMPLE_PRODUCTS: Product[] = [
     description: 'A cute and practical drawstring crochet pouch. Perfect for storing small treasures, makeup, or as a gift bag. Handmade with care.',
     category: 'crochet-bags',
     price: 550,
-    images: ['/product-images/drawstringbag(1).jpeg', '/product-images/drawstringbag(2).jpeg'],
+    images: [
+      '/product-images/drawstringbag(1).jpeg',
+      '/product-images/drawstringbag(2).jpeg',
+    ],
     colors: ['Natural Cream', 'Blush Pink', 'Sage Green', 'Lavender'],
     sizes: ['Small', 'Medium', 'Large'],
     stock_quantity: 8,
@@ -75,7 +89,10 @@ export const SAMPLE_PRODUCTS: Product[] = [
     description: 'A stylish crochet sling bag with an adjustable strap. Chic, lightweight, and perfect for a day out. Handwoven with premium cotton.',
     category: 'crochet-bags',
     price: 1100,
-    images: ['/product-images/slingbag.jpeg', '/product-images/slingbag(1).jpeg'],
+    images: [
+      '/product-images/slingbag.jpeg',
+      '/product-images/slingbag(1).jpeg',
+    ],
     colors: ['Dusty Rose', 'Cream', 'Sage', 'Brown'],
     sizes: ['One Size'],
     stock_quantity: 4,
@@ -139,7 +156,10 @@ export const SAMPLE_PRODUCTS: Product[] = [
     description: 'A charming crochet pouch perfect for coins, earbuds, or small accessories. A thoughtful handmade gift idea.',
     category: 'crochet-bags',
     price: 350,
-    images: ['/product-images/pouch.jpeg', '/product-images/pouch(1).jpeg'],
+    images: [
+      '/product-images/pouch.jpeg',
+      '/product-images/pouch(1).jpeg',
+    ],
     colors: ['Blush', 'Cream', 'Mint', 'Lavender', 'Peach'],
     sizes: ['Small', 'Medium'],
     stock_quantity: 12,
@@ -153,6 +173,8 @@ export const SAMPLE_PRODUCTS: Product[] = [
     created_at: '2026-10-15T00:00:00Z',
     updated_at: '2026-10-15T00:00:00Z',
   },
+
+  // ── CROCHET COASTERS ────────────────────────────────────────────────────
   {
     id: 'p8',
     name: 'Round Crochet Coaster Set',
@@ -160,7 +182,11 @@ export const SAMPLE_PRODUCTS: Product[] = [
     description: 'Beautiful handmade crochet coasters to add a touch of handmade elegance to your home. Available as sets of 2, 4, or 6.',
     category: 'crochet-coasters',
     price: 280,
-    images: ['/product-images/coaster.jpeg', '/product-images/coaster(1).jpeg', '/product-images/coaster(2).jpeg'],
+    images: [
+      '/product-images/coaster.jpeg',
+      '/product-images/coaster(1).jpeg',
+      '/product-images/coaster(2).jpeg',
+    ],
     colors: ['Cream', 'Blush Pink', 'Sage Green', 'Beige', 'Multi-color'],
     sizes: ['Set of 2', 'Set of 4', 'Set of 6'],
     stock_quantity: 15,
@@ -174,6 +200,8 @@ export const SAMPLE_PRODUCTS: Product[] = [
     created_at: '2026-09-01T00:00:00Z',
     updated_at: '2026-09-01T00:00:00Z',
   },
+
+  // ── TABLE MATS ──────────────────────────────────────────────────────────
   {
     id: 'p9',
     name: 'Crochet Table Mat',
@@ -195,14 +223,19 @@ export const SAMPLE_PRODUCTS: Product[] = [
     created_at: '2026-09-05T00:00:00Z',
     updated_at: '2026-09-05T00:00:00Z',
   },
+
+  // ── THAAL POSH ──────────────────────────────────────────────────────────
   {
     id: 'p10',
-    name: 'Flower Aasan (Thaal Posh)',
-    slug: 'flower-aasan-thaal-posh',
+    name: 'Flower Aasan',
+    slug: 'flower-aasan',
     description: 'Beautifully crafted crochet aasan with intricate flower designs. Used traditionally for prayer plates (thaals) and decorative platters.',
     category: 'thaal-posh',
     price: 450,
-    images: ['/product-images/aasan_flower.jpeg', '/product-images/aasan.jpeg'],
+    images: [
+      '/product-images/aasan_flower.jpeg',
+      '/product-images/aasan.jpeg',
+    ],
     colors: ['White & Gold', 'Cream & Peach', 'Pink & White', 'Multi-color'],
     sizes: ['Small (20cm)', 'Medium (30cm)', 'Large (40cm)'],
     stock_quantity: 8,
@@ -223,7 +256,11 @@ export const SAMPLE_PRODUCTS: Product[] = [
     description: 'A divine lotus-motif crochet aasan for your prayer space. Handmade with sacred intention and beautiful craftsmanship.',
     category: 'thaal-posh',
     price: 500,
-    images: ['/product-images/aasan_lotus.jpeg', '/product-images/aasan_lotus(1).jpeg', '/product-images/aasan_lotus(3).jpeg'],
+    images: [
+      '/product-images/aasan_lotus.jpeg',
+      '/product-images/aasan_lotus(1).jpeg',
+      '/product-images/aasan_lotus(3).jpeg',
+    ],
     colors: ['White & Gold', 'Pink & White', 'Cream', 'Red & Gold'],
     sizes: ['Medium (30cm)', 'Large (40cm)'],
     stock_quantity: 5,
@@ -265,7 +302,10 @@ export const SAMPLE_PRODUCTS: Product[] = [
     description: 'Elegant white crochet flower aasan with intricate lacework. Perfect for festive occasions and gifting.',
     category: 'thaal-posh',
     price: 420,
-    images: ['/product-images/aasan_white_flower.jpeg', '/product-images/aasan_yellow_flower.jpeg'],
+    images: [
+      '/product-images/aasan_white_flower.jpeg',
+      '/product-images/aasan_yellow_flower.jpeg',
+    ],
     colors: ['Pure White', 'Off-White', 'Yellow & White'],
     sizes: ['Small', 'Medium', 'Large'],
     stock_quantity: 7,
@@ -321,6 +361,107 @@ export const SAMPLE_PRODUCTS: Product[] = [
     created_at: '2026-09-18T00:00:00Z',
     updated_at: '2026-09-18T00:00:00Z',
   },
+
+  // ── CROCHET FLOWERS ─────────────────────────────────────────────────────
+  // The flower-shaped aaasans double as crochet flower decor;
+  // we also add the Mikasa scarf flowers and the rose earrings bouquet.
+  {
+    id: 'p21',
+    name: 'Crochet Flower Bouquet',
+    slug: 'crochet-flower-bouquet',
+    description: 'A charming handcrafted crochet flower bouquet that never wilts. Perfect as a home décor piece, gift, or centrepiece. Comes in a mix of soft pastel shades.',
+    category: 'crochet-flowers',
+    price: 599,
+    images: [
+      '/product-images/aasan_flower.jpeg',
+      '/product-images/aasan_sunflower.jpeg',
+      '/product-images/aasan_white_flower.jpeg',
+      '/product-images/aasan_yellow_flower.jpeg',
+    ],
+    colors: ['Pink Mix', 'Pastel Mix', 'Sunflower Yellow', 'White & Cream'],
+    sizes: ['Small (5 flowers)', 'Medium (8 flowers)', 'Large (12 flowers)'],
+    stock_quantity: 7,
+    sku: 'CF-BQT-021',
+    preparation_time: '4-6 days',
+    customization_options: 'Choose your own color palette and number of flowers.',
+    is_available: true,
+    is_featured: true,
+    is_bestseller: true,
+    is_new: true,
+    created_at: '2026-10-19T00:00:00Z',
+    updated_at: '2026-10-19T00:00:00Z',
+  },
+  {
+    id: 'p22',
+    name: 'Crochet Lotus Flower',
+    slug: 'crochet-lotus-flower',
+    description: 'A beautifully crafted crochet lotus flower — a serene piece of art that looks stunning in any space or as a devotional offering.',
+    category: 'crochet-flowers',
+    price: 320,
+    images: [
+      '/product-images/aasan_lotus.jpeg',
+      '/product-images/aasan_lotus(1).jpeg',
+      '/product-images/aasan_lotus(3).jpeg',
+    ],
+    colors: ['Pink & White', 'White & Gold', 'Cream', 'Lavender'],
+    sizes: ['Small', 'Medium', 'Large'],
+    stock_quantity: 10,
+    sku: 'CF-LTS-022',
+    preparation_time: '2-3 days',
+    customization_options: 'Custom colors available. Can be made into a hair accessory.',
+    is_available: true,
+    is_featured: false,
+    is_bestseller: false,
+    is_new: true,
+    created_at: '2026-10-20T00:00:00Z',
+    updated_at: '2026-10-20T00:00:00Z',
+  },
+
+  // ── CROCHET TOYS ────────────────────────────────────────────────────────
+  {
+    id: 'p23',
+    name: 'Paw Print Crochet Plushie',
+    slug: 'paw-print-crochet-plushie',
+    description: 'An adorable paw-print crochet plushie toy. Soft, safe, and handmade — perfect for gifting to children or crochet lovers alike.',
+    category: 'crochet-toys',
+    price: 450,
+    images: ['/product-images/pawgloves.jpeg'],
+    colors: ['Cream & Brown', 'Pink & White', 'Grey & Pink'],
+    sizes: ['Small', 'Medium'],
+    stock_quantity: 5,
+    sku: 'CT-PAW-023',
+    preparation_time: '4-5 days',
+    customization_options: 'Choose color combination and size.',
+    is_available: true,
+    is_featured: false,
+    is_bestseller: false,
+    is_new: true,
+    created_at: '2026-10-18T00:00:00Z',
+    updated_at: '2026-10-18T00:00:00Z',
+  },
+  {
+    id: 'p24',
+    name: 'Crochet Bow Toy',
+    slug: 'crochet-bow-toy',
+    description: 'A sweet crochet bow toy and décor piece — can be used as a bag charm, hair accessory, or a decorative bow for wrapping gifts.',
+    category: 'crochet-toys',
+    price: 150,
+    images: ['/product-images/bow.jpeg'],
+    colors: ['Blush', 'White', 'Cream', 'Lavender', 'Sage'],
+    sizes: ['Small', 'Medium', 'Large'],
+    stock_quantity: 20,
+    sku: 'CT-BOW-024',
+    preparation_time: '1-2 days',
+    customization_options: 'Any color. Can be attached to clip, elastic, or ribbon.',
+    is_available: true,
+    is_featured: false,
+    is_bestseller: false,
+    is_new: true,
+    created_at: '2026-10-16T00:00:00Z',
+    updated_at: '2026-10-16T00:00:00Z',
+  },
+
+  // ── SCRUNCHIES ──────────────────────────────────────────────────────────
   {
     id: 'p16',
     name: 'Crochet Scrunchie',
@@ -345,9 +486,9 @@ export const SAMPLE_PRODUCTS: Product[] = [
   },
   {
     id: 'p17',
-    name: 'Crochet Bow Accessory',
-    slug: 'crochet-bow-accessory',
-    description: 'A sweet handmade crochet bow clip — perfect as a hair accessory, bag charm, or decorative piece.',
+    name: 'Crochet Bow Scrunchie',
+    slug: 'crochet-bow-scrunchie',
+    description: 'A sweet handmade crochet bow scrunchie — perfect as a hair accessory or bag charm. Soft on hair and absolutely adorable.',
     category: 'scrunchies',
     price: 150,
     images: ['/product-images/bow.jpeg'],
@@ -364,6 +505,8 @@ export const SAMPLE_PRODUCTS: Product[] = [
     created_at: '2026-10-16T00:00:00Z',
     updated_at: '2026-10-16T00:00:00Z',
   },
+
+  // ── CUSTOM CREATIONS ────────────────────────────────────────────────────
   {
     id: 'p18',
     name: 'Rose Crochet Earrings',
@@ -440,13 +583,14 @@ export const DEFAULT_SITE_CONFIG: SiteConfig = {
   announcement_text: 'Handmade with Love | Every Stitch Tells a Story ✨',
 }
 
+// Category hero images — each pointing to the most representative product image
 export const CATEGORY_IMAGES: Record<string, string> = {
-  'crochet-bags': '/product-images/lilybag(1).jpeg',
+  'crochet-bags':     '/product-images/lilybag(1).jpeg',
   'crochet-coasters': '/product-images/coaster.jpeg',
-  'table-mats': '/product-images/table_mat.jpeg',
-  'thaal-posh': '/product-images/thaal_posh_pink.jpeg',
-  'crochet-flowers': '/product-images/aasan_flower.jpeg',
-  'crochet-toys': '/product-images/bow.jpeg',
-  'scrunchies': '/product-images/scrunchy.jpeg',
+  'table-mats':       '/product-images/table_mat.jpeg',
+  'thaal-posh':       '/product-images/thaal_posh_pink.jpeg',
+  'crochet-flowers':  '/product-images/aasan_flower.jpeg',
+  'crochet-toys':     '/product-images/pawgloves.jpeg',
+  'scrunchies':       '/product-images/scrunchy.jpeg',
   'custom-creations': '/product-images/rose_earrings.jpeg',
 }
