@@ -573,9 +573,9 @@ export const SAMPLE_PRODUCTS: Product[] = [
 ]
 
 export const DEFAULT_SITE_CONFIG: SiteConfig = {
-  whatsapp_number: 'YOUR_WHATSAPP_NUMBER',
-  instagram_url: 'https://instagram.com/crochella',
-  email: 'crochella@email.com',
+  whatsapp_number: '9259474964',
+  instagram_url: 'https://instagram.com/simarwhoneversleeps',
+  email: 'simarjeetkaur20012006@gmail.com',
   shipping_fee: 80,
   free_shipping_above: 1500,
   razorpay_enabled: false,

@@ -69,7 +69,7 @@ export default function CategoryPage() {
         <img
           src={heroImage}
           alt={categoryLabel}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center"
         />
         <div
           className="absolute inset-0 flex flex-col items-center justify-center text-center"
@@ -140,7 +140,7 @@ export default function CategoryPage() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
             {Array.from({ length: 6 }).map((_, i) => (
               <div key={i} className="bg-white rounded-2xl overflow-hidden animate-pulse">
-                <div className="aspect-square bg-[#F5DDE3]/60" />
+                <div className="aspect-[4/5] bg-[#F5DDE3]/60" />
                 <div className="p-4 space-y-2">
                   <div className="h-3 bg-[#E9DCCB] rounded-full w-1/3" />
                   <div className="h-4 bg-[#E9DCCB] rounded-full w-3/4" />

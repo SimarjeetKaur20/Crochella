@@ -116,8 +116,10 @@ const ContactPage: React.FC = () => {
   const siteConfig = useProductStore((s) => s.siteConfig);
 
   const whatsappNumber = siteConfig?.whatsapp_number ?? '';
-  const instagramHandle = siteConfig?.instagram_url ? siteConfig.instagram_url.replace(/.*instagram\.com\//, '') : 'crochella';
-  const emailAddress = siteConfig?.email ?? '';
+  const emailAddress = siteConfig?.email ?? 'simarjeetkaur20012006@gmail.com';
+
+  const INSTAGRAM_PERSONAL = 'https://www.instagram.com/simarwhoneversleeps/?hl=en';
+  const INSTAGRAM_CROCHELLA = 'https://www.instagram.com/_crochellla/?hl=en';
 
   const cleanPhone = whatsappNumber.replace(/\D/g, '');
   const waBaseUrl = cleanPhone ? `https://wa.me/${cleanPhone}` : 'https://wa.me/';
@@ -254,10 +256,9 @@ const ContactPage: React.FC = () => {
               label="Message Us"
             />
 
-            {/* Instagram */}
-            <ContactCard
-              bgColor="bg-[#FDF5F8]"
-              icon={
+            {/* Instagram — two accounts */}
+            <div className="bg-[#FDF5F8] rounded-2xl p-6 flex flex-col items-center text-center gap-3 border border-[#E9DCCB]">
+              <div className="w-14 h-14 rounded-full bg-white/70 flex items-center justify-center shadow-sm">
                 <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none">
                   <defs>
                     <linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%">
@@ -272,12 +273,30 @@ const ContactPage: React.FC = () => {
                   <circle cx="12" cy="12" r="4" stroke="url(#ig-grad)" strokeWidth="2" />
                   <circle cx="17.5" cy="6.5" r="1" fill="#dc2743" />
                 </svg>
-              }
-              title="Instagram"
-              subtitle={`@${instagramHandle}`}
-              href={`https://instagram.com/${instagramHandle}`}
-              label="Follow Us"
-            />
+              </div>
+              <div>
+                <h3 className="font-semibold text-[#493B35] mb-0.5">Instagram</h3>
+                <p className="text-xs text-[#493B35]/60">Follow our crochet journey</p>
+              </div>
+              <div className="flex flex-col gap-2 w-full mt-1">
+                <a
+                  href={INSTAGRAM_PERSONAL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-2 bg-[#493B35] text-white rounded-full text-sm font-medium hover:bg-[#3a2e2a] transition"
+                >
+                  Personal Instagram
+                </a>
+                <a
+                  href={INSTAGRAM_CROCHELLA}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-2 bg-[#493B35] text-white rounded-full text-sm font-medium hover:bg-[#3a2e2a] transition"
+                >
+                  Crochella Instagram
+                </a>
+              </div>
+            </div>
 
             {/* Email */}
             <ContactCard
@@ -289,8 +308,8 @@ const ContactPage: React.FC = () => {
                 </svg>
               }
               title="Email"
-              subtitle={emailAddress || 'hello@crochella.in'}
-              href={`mailto:${emailAddress || 'hello@crochella.in'}`}
+              subtitle={emailAddress}
+              href={`mailto:${emailAddress}`}
               label="Send Email"
             />
           </div>

@@ -215,12 +215,46 @@ html {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
 }
 
 /* ── Hero panel arch shape ──────────────────────────────────────────────── */
 .hero-arch-panel {
   border-radius: 50% 50% 18px 18px / 60px 60px 18px 18px;
+}
+
+/* ── Reusable image-frame utilities ─────────────────────────────────────── */
+/* Consistent, distortion-free image containers used across the site.       */
+/* Apply .img-frame on the wrapper and the ratio/fit modifier as needed.    */
+.img-frame {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.img-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.img-frame--portrait { aspect-ratio: 4 / 5; }
+.img-frame--square   { aspect-ratio: 1 / 1; }
+.img-frame--wide     { aspect-ratio: 16 / 9; }
+.img-frame--contain img { object-fit: contain; }
+
+/* ── Hero background — responsive positioning keeps the photo balanced ──── */
+.hero-bg {
+  background-size: cover;
+  background-position: center 40%;
+  background-repeat: no-repeat;
+}
+@media (max-width: 768px) {
+  .hero-bg { background-position: center 30%; }
+}
+@media (max-width: 480px) {
+  .hero-bg { background-position: center 25%; }
 }
 
 /* ── Page-load fade-in ──────────────────────────────────────────────────── */
@@ -236,3 +270,12 @@ html {
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #FFF8F1; }
 ::-webkit-scrollbar-thumb { background: #F4DAD8; border-radius: 3px; }
+
+/* ── Hide scrollbar (for horizontal pill rows) ─────────────────────────── */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

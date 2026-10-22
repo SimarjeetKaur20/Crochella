@@ -41,13 +41,14 @@ export default function ProductCard({ product, className = '' }: ProductCardProp
       onMouseLeave={() => { setHovered(false); setActiveImg(0) }}
     >
       {/* ── Image area ── */}
-      <div className="relative overflow-hidden" style={{ aspectRatio: '1 / 1', backgroundColor: '#FFF8F1' }}>
+      <div className="relative overflow-hidden" style={{ aspectRatio: '4 / 5', backgroundColor: '#FFF8F1' }}>
         {product.images.length > 0 ? (
           <img
             src={product.images[activeImg]}
             alt={product.name}
             className="w-full h-full object-cover"
             style={{
+              objectPosition: 'center',
               transform: hovered ? 'scale(1.05)' : 'scale(1)',
               transition: 'transform 0.5s ease',
             }}

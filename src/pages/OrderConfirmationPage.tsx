@@ -148,7 +148,7 @@ const OrderConfirmationPage: React.FC = () => {
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="w-14 h-14 rounded-xl object-cover border border-[#E9DCCB] flex-shrink-0"
+                    className="w-14 h-14 rounded-xl object-cover object-center border border-[#E9DCCB] flex-shrink-0"
                   />
                 )}
                 <div className="flex-1 min-w-0">

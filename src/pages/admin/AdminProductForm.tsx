@@ -505,7 +505,7 @@ export default function AdminProductForm() {
                   <img
                     src={img}
                     alt={`Product ${i + 1}`}
-                    className="w-20 h-20 rounded-xl object-cover"
+                    className="w-20 h-20 rounded-xl object-cover object-center"
                     style={{ border: '1px solid #E9DCCB' }}
                   />
                   <button

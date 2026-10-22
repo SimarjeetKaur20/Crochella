@@ -117,12 +117,13 @@ export default function ProductDetailPage() {
           {/* ── Image Gallery ─────────────────────────────────────────────── */}
           <div className="space-y-4">
             {/* Main image */}
-            <div className="relative rounded-3xl overflow-hidden bg-white shadow-md aspect-square">
+            <div className="relative rounded-3xl overflow-hidden shadow-md aspect-square" style={{ backgroundColor: '#FFF8F1' }}>
               {p.images.length > 0 ? (
                 <img
                   src={p.images[currentImage]}
                   alt={p.name}
-                  className="w-full h-full object-cover transition-opacity duration-300"
+                  className="w-full h-full object-contain transition-opacity duration-300"
+                  style={{ objectPosition: 'center' }}
                 />
               ) : (
                 <div
@@ -184,7 +185,7 @@ export default function ProductDetailPage() {
                       currentImage === i ? 'border-[#493B35]' : 'border-transparent'
                     }`}
                   >
-                    <img src={img} alt={`${p.name} view ${i + 1}`} className="w-full h-full object-cover" />
+                    <img src={img} alt={`${p.name} view ${i + 1}`} className="w-full h-full object-cover object-center" />
                   </button>
                 ))}
               </div>

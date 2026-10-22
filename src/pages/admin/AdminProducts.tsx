@@ -277,7 +277,7 @@ export default function AdminProducts() {
                         <img
                           src={product.images[0]}
                           alt={product.name}
-                          className="w-10 h-10 rounded-lg object-cover"
+                          className="w-10 h-10 rounded-lg object-cover object-center"
                           style={{ border: '1px solid #E9DCCB' }}
                         />
                       ) : (

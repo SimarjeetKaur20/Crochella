@@ -84,7 +84,7 @@ export default function CartPage() {
                         <img
                           src={item.product.images[0]}
                           alt={item.product.name}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover object-center"
                         />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center text-2xl">🧶</div>

@@ -159,11 +159,9 @@ export default function HomePage() {
           HERO
       ══════════════════════════════════════════════════════ */}
       <section
-        className="relative w-full"
+        className="relative w-full hero-bg"
         style={{
           backgroundImage: "url('/product-images/coverpage.jpeg')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center 40%',
           minHeight: 'min(90vh, 620px)',
         }}
       >
@@ -499,7 +497,7 @@ export default function HomePage() {
                   <img
                     src={img}
                     alt={`Gallery ${i + 1}`}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-center"
                     loading="lazy"
                   />
                 </div>
@@ -583,6 +581,7 @@ function ArchCard({ slug, label, image, delay, visible, noMotion }: ArchCardProp
               width: '100%',
               height: '100%',
               objectFit: 'cover',
+              objectPosition: 'center',
               transform: hovered ? 'scale(1.07)' : 'scale(1)',
               transition: 'transform 0.5s ease',
               display: 'block',
