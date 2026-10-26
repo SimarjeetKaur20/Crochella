@@ -297,16 +297,16 @@ export const SAMPLE_PRODUCTS: Product[] = [
   },
   {
     id: 'p13',
-    name: 'White Flower Aasan',
-    slug: 'white-flower-aasan',
-    description: 'Elegant white crochet flower aasan with intricate lacework. Perfect for festive occasions and gifting.',
+    name: 'Yellow Flower Aasan',
+    slug: 'yellow-flower-aasan',
+    description: 'Elegant yellow crochet flower aasan with intricate lacework. Perfect for festive occasions and gifting.',
     category: 'crochet-flowers',
     price: 420,
     images: [
-      '/product-images/aasan_white_flower.jpeg',
       '/product-images/aasan_yellow_flower.jpeg',
+      '/product-images/aasan_white_flower.jpeg',
     ],
-    colors: ['Pure White', 'Off-White', 'Yellow & White'],
+    colors: ['Yellow & White', 'Pure White', 'Off-White'],
     sizes: ['Small', 'Medium', 'Large'],
     stock_quantity: 7,
     sku: 'TP-WFL-013',
@@ -363,8 +363,6 @@ export const SAMPLE_PRODUCTS: Product[] = [
   },
 
   // ── CROCHET FLOWERS ─────────────────────────────────────────────────────
-  // The flower-shaped aaasans double as crochet flower decor;
-  // we also add the Mikasa scarf flowers and the rose earrings bouquet.
   {
     id: 'p21',
     name: 'Crochet Flower Bouquet',
@@ -373,10 +371,8 @@ export const SAMPLE_PRODUCTS: Product[] = [
     category: 'crochet-flowers',
     price: 599,
     images: [
-      '/product-images/aasan_flower.jpeg',
-      '/product-images/aasan_sunflower.jpeg',
-      '/product-images/aasan_white_flower.jpeg',
-      '/product-images/aasan_yellow_flower.jpeg',
+      '/product-images/aasan_lotus(1).jpeg',
+      '/product-images/aasan_lotus(3).jpeg',
     ],
     colors: ['Pink Mix', 'Pastel Mix', 'Sunflower Yellow', 'White & Cream'],
     sizes: ['Small (5 flowers)', 'Medium (8 flowers)', 'Large (12 flowers)'],
@@ -391,32 +387,6 @@ export const SAMPLE_PRODUCTS: Product[] = [
     created_at: '2026-10-19T00:00:00Z',
     updated_at: '2026-10-19T00:00:00Z',
   },
-  {
-    id: 'p22',
-    name: 'Crochet Lotus Flower',
-    slug: 'crochet-lotus-flower',
-    description: 'A beautifully crafted crochet lotus flower — a serene piece of art that looks stunning in any space or as a devotional offering.',
-    category: 'crochet-flowers',
-    price: 320,
-    images: [
-      '/product-images/aasan_lotus.jpeg',
-      '/product-images/aasan_lotus(1).jpeg',
-      '/product-images/aasan_lotus(3).jpeg',
-    ],
-    colors: ['Pink & White', 'White & Gold', 'Cream', 'Lavender'],
-    sizes: ['Small', 'Medium', 'Large'],
-    stock_quantity: 10,
-    sku: 'CF-LTS-022',
-    preparation_time: '2-3 days',
-    customization_options: 'Custom colors available. Can be made into a hair accessory.',
-    is_available: true,
-    is_featured: false,
-    is_bestseller: false,
-    is_new: true,
-    created_at: '2026-10-20T00:00:00Z',
-    updated_at: '2026-10-20T00:00:00Z',
-  },
-
   // ── CROCHET TOYS ────────────────────────────────────────────────────────
   {
     id: 'p23',
