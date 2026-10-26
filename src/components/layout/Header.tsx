@@ -4,14 +4,11 @@ import { Menu, X, ShoppingBag, User, ChevronDown, Heart, Search } from 'lucide-r
 import { useCartStore } from '../../store/cartStore'
 
 const categories = [
-  { label: 'Crochet Bags',     slug: 'crochet-bags' },
-  { label: 'Crochet Coasters', slug: 'crochet-coasters' },
-  { label: 'Table Mats',       slug: 'table-mats' },
-  { label: 'Thaal Posh',       slug: 'thaal-posh' },
-  { label: 'Crochet Flowers',  slug: 'crochet-flowers' },
-  { label: 'Crochet Toys',     slug: 'crochet-toys' },
-  { label: 'Scrunchies',       slug: 'scrunchies' },
-  { label: 'Custom Creations', slug: 'custom-creations' },
+  { label: 'Crochet Bags',           slug: 'crochet-bags' },
+  { label: 'Crochet Coasters',       slug: 'crochet-coasters' },
+  { label: 'Table Mats & Thaal Posh', slug: 'table-mats' },
+  { label: 'Crochet Flowers',        slug: 'crochet-flowers' },
+  { label: 'Custom Creations',       slug: 'custom-creations' },
 ]
 
 /* Bow accent next to logo */

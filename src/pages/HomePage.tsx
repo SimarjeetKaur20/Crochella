@@ -12,11 +12,8 @@ import ProductCard from '../components/product/ProductCard'
 const CATEGORIES: { slug: ProductCategory; label: string }[] = [
   { slug: 'crochet-bags',     label: 'Crochet Bags' },
   { slug: 'crochet-coasters', label: 'Coasters' },
-  { slug: 'table-mats',       label: 'Table Mats' },
-  { slug: 'thaal-posh',       label: 'Thaal Posh' },
+  { slug: 'table-mats',       label: 'Table Mats & Thaal Posh' },
   { slug: 'crochet-flowers',  label: 'Crochet Flowers' },
-  { slug: 'scrunchies',       label: 'Scrunchies' },
-  { slug: 'crochet-toys',     label: 'Crochet Toys' },
   { slug: 'custom-creations', label: 'Custom Creations' },
 ]
 
@@ -327,7 +324,7 @@ export default function HomePage() {
         </div>
 
         {/* Arch cards grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 md:gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
           {CATEGORIES.map((cat, i) => (
             <ArchCard
               key={cat.slug}
@@ -505,7 +502,7 @@ export default function HomePage() {
             </div>
             <div className="text-center" style={revealStyle(igReveal.visible, 160)}>
               <a
-                href="https://instagram.com/crochella"
+                href="https://www.instagram.com/_crochellla/?hl=en"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold transition-all hover:-translate-y-0.5 hover:bg-[#F4DAD8]"

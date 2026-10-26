@@ -25,20 +25,14 @@ export type ProductCategory =
   | 'crochet-bags'
   | 'crochet-coasters'
   | 'table-mats'
-  | 'thaal-posh'
   | 'crochet-flowers'
-  | 'crochet-toys'
-  | 'scrunchies'
   | 'custom-creations'
 
 export const CATEGORY_LABELS: Record<ProductCategory, string> = {
   'crochet-bags': 'Crochet Bags',
   'crochet-coasters': 'Crochet Coasters',
-  'table-mats': 'Table Mats',
-  'thaal-posh': 'Thaal Posh',
+  'table-mats': 'Table Mats & Thaal Posh',
   'crochet-flowers': 'Crochet Flowers',
-  'crochet-toys': 'Crochet Toys',
-  'scrunchies': 'Scrunchies',
   'custom-creations': 'Custom Creations',
 }
 

@@ -18,11 +18,8 @@ const CATEGORY_IMAGES: Record<string, string> = {
   'crochet-bags':     '/product-images/lilybag(1).jpeg',
   'crochet-coasters': '/product-images/coaster.jpeg',
   'table-mats':       '/product-images/table_mat.jpeg',
-  'thaal-posh':       '/product-images/thaal_posh_pink.jpeg',
   'crochet-flowers':  '/product-images/aasan_flower.jpeg',
-  'crochet-toys':     '/product-images/pawgloves.jpeg',
-  'scrunchies':       '/product-images/scrunchy.jpeg',
-  'custom-creations': '/product-images/coverpage.jpeg',
+  'custom-creations': '/product-images/rose_earrings.jpeg',
 }
 
 export default function CategoryPage() {

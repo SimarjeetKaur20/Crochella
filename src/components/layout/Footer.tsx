@@ -25,18 +25,11 @@ const quickLinks = [
 ]
 
 const categoryLinks = [
-  { label: 'Crochet Bags',  to: '/category/crochet-bags' },
-  { label: 'Coasters',      to: '/category/crochet-coasters' },
-  { label: 'Table Mats',    to: '/category/table-mats' },
-  { label: 'Thaal Posh',    to: '/category/thaal-posh' },
-  { label: 'Scrunchies',    to: '/category/scrunchies' },
-]
-
-const helpLinks = [
-  { label: 'Shipping Info',       to: '/shipping-info' },
-  { label: 'Return Policy',       to: '/return-policy' },
-  { label: 'Privacy Policy',      to: '/privacy-policy' },
-  { label: 'Terms & Conditions',  to: '/terms' },
+  { label: 'Crochet Bags',           to: '/category/crochet-bags' },
+  { label: 'Coasters',               to: '/category/crochet-coasters' },
+  { label: 'Table Mats & Thaal Posh', to: '/category/table-mats' },
+  { label: 'Crochet Flowers',        to: '/category/crochet-flowers' },
+  { label: 'Custom Creations',       to: '/category/custom-creations' },
 ]
 
 function FooterColumn({ title, children }: { title: string; children: React.ReactNode }) {
@@ -71,7 +64,7 @@ export default function Footer() {
       {/* ── Top Section ── */}
       <div style={{ backgroundColor: '#F5DDE3' }}>
         <div className="mx-auto max-w-7xl px-6 py-14 md:px-10">
-          <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
 
             {/* Column 1 – Brand */}
             <div className="flex flex-col gap-5">
@@ -150,15 +143,6 @@ export default function Footer() {
             <FooterColumn title="Categories">
               <nav className="flex flex-col gap-2.5">
                 {categoryLinks.map(({ label, to }) => (
-                  <FooterLink key={to} to={to} label={label} />
-                ))}
-              </nav>
-            </FooterColumn>
-
-            {/* Column 4 – Help */}
-            <FooterColumn title="Help">
-              <nav className="flex flex-col gap-2.5">
-                {helpLinks.map(({ label, to }) => (
                   <FooterLink key={to} to={to} label={label} />
                 ))}
               </nav>
