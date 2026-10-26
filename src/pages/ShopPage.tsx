@@ -378,15 +378,18 @@ export default function ShopPage() {
           <p className="text-sm" style={{ color: '#7A5C50' }}>
             {isLoading ? (
               'Loading products…'
-            ) : (
+            ) : activeCategory ? (
               <>
                 Showing <strong style={{ color: '#57382D' }}>{filtered.length}</strong>{' '}
-                {filtered.length === 1 ? 'product' : 'products'}
-                {activeCategory && (
-                  <>
-                    {' '}in <strong style={{ color: '#57382D' }}>{CATEGORY_LABELS[activeCategory as ProductCategory]}</strong>
-                  </>
-                )}
+                {filtered.length === 1 ? 'product' : 'products'}{' '}
+                in <strong style={{ color: '#57382D' }}>{CATEGORY_LABELS[activeCategory as ProductCategory]}</strong>
+              </>
+            ) : (
+              <>
+                <strong style={{ color: '#57382D' }}>{filtered.length}</strong>{' '}
+                products across {categories.filter(([slug]) =>
+                  filtered.some((p) => p.category === slug)
+                ).length} categories
               </>
             )}
           </p>
@@ -402,14 +405,14 @@ export default function ShopPage() {
         </div>
 
         {/* ══════════════════════════════════════════════════════
-            PRODUCT GRID  (staggered entrance, arched cards)
+            PRODUCT DISPLAY — grouped by category (default)
+            or flat grid (when a category / search filter is active)
         ══════════════════════════════════════════════════════ */}
         {isLoading ? (
           /* ── Loading skeletons (matching arched card shape) ── */
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
             {Array.from({ length: 8 }).map((_, i) => (
               <div key={i}>
-                {/* Arched image placeholder */}
                 <div
                   className="animate-pulse"
                   style={{
@@ -419,7 +422,6 @@ export default function ShopPage() {
                     border: '1px solid #F4DAD8',
                   }}
                 />
-                {/* Text + button placeholders */}
                 <div className="pt-3 px-1 space-y-2 animate-pulse">
                   <div className="h-3 bg-[#F6E5D9] rounded-full w-1/3" />
                   <div className="h-4 bg-[#F6E5D9] rounded-full w-3/4" />
@@ -432,6 +434,7 @@ export default function ShopPage() {
               </div>
             ))}
           </div>
+
         ) : filtered.length === 0 ? (
           /* ── Empty state ── */
           <motion.div
@@ -458,8 +461,106 @@ export default function ShopPage() {
               Clear Filters
             </button>
           </motion.div>
+
+        ) : !activeCategory && !search.trim() && priceRange === 0 && !availableOnly ? (
+          /* ══════════════════════════════════════════════════════
+             GROUPED VIEW — one section per category
+             Only shown when no filter at all is active.
+          ══════════════════════════════════════════════════════ */
+          <div className="space-y-14">
+            {categories
+              .filter(([slug]) => filtered.some((p) => p.category === slug))
+              .map(([slug, label]) => {
+                const catProducts = filtered.filter((p) => p.category === slug)
+                return (
+                  <motion.section
+                    key={slug}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.08 }}
+                    variants={sectionReveal(prefersReducedMotion)}
+                  >
+                    {/* ── Category heading row ── */}
+                    <div className="flex items-center justify-between mb-5">
+                      <div className="flex items-center gap-3">
+                        {/* Decorative accent line */}
+                        <span
+                          className="hidden sm:block h-px w-8 rounded-full"
+                          style={{ backgroundColor: '#C96F78', opacity: 0.5 }}
+                        />
+                        <h2
+                          className="text-xl md:text-2xl font-bold"
+                          style={{
+                            fontFamily: "'Playfair Display', Georgia, serif",
+                            color: '#57382D',
+                          }}
+                        >
+                          {label}
+                        </h2>
+                        <span
+                          className="text-xs font-medium px-2.5 py-0.5 rounded-full"
+                          style={{ backgroundColor: '#F4DAD8', color: '#C96F78' }}
+                        >
+                          {catProducts.length}
+                        </span>
+                      </div>
+                      {/* "See all" link — jumps to filtered view */}
+                      <button
+                        onClick={() => setActiveCategory(slug)}
+                        className="text-xs font-semibold flex items-center gap-1 transition-all duration-200 hover:gap-2"
+                        style={{ color: '#C96F78' }}
+                      >
+                        See all →
+                      </button>
+                    </div>
+
+                    {/* ── Thin divider ── */}
+                    <div
+                      className="mb-5 h-px rounded-full"
+                      style={{ backgroundColor: '#F4DAD8' }}
+                    />
+
+                    {/* ── Up to 4 product cards per category ── */}
+                    <motion.div
+                      variants={staggerContainer(prefersReducedMotion)}
+                      className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5"
+                    >
+                      {catProducts.slice(0, 4).map((product) => (
+                        <motion.div
+                          key={product.id}
+                          variants={cardReveal(prefersReducedMotion)}
+                        >
+                          <ShopProductCard product={product} />
+                        </motion.div>
+                      ))}
+                    </motion.div>
+
+                    {/* ── "View more" row if category has > 4 items ── */}
+                    {catProducts.length > 4 && (
+                      <div className="mt-6 text-center">
+                        <button
+                          onClick={() => setActiveCategory(slug)}
+                          className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
+                          style={{
+                            border: '1.5px solid #57382D',
+                            color: '#57382D',
+                            backgroundColor: 'transparent',
+                          }}
+                        >
+                          View all {catProducts.length} {label}
+                        </button>
+                      </div>
+                    )}
+                  </motion.section>
+                )
+              })}
+          </div>
+
         ) : (
-          /* ── Grid with staggered children ── */
+          /* ══════════════════════════════════════════════════════
+             FLAT GRID — shown when a category chip / search /
+             price filter / availability filter is active
+          ══════════════════════════════════════════════════════ */
           <motion.div
             initial="hidden"
             animate="visible"
